@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./components/App";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./reducers";
+import middleware from "./middleware";
+import "semantic-ui-css/semantic.min.css";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { PersistGate } from "redux-persist/lib/integration/react";
+
+// the following code I got from stack overflow answer as I didn't know how to persist the redux state
+const persistConfig = {
+  key: ["authedUser", "questions", "users"],
+  storage: storage,
+  whitelist: ["authedUser", "questions", "users"],
+};
+const pReducer = persistReducer(persistConfig, reducer);
+
+const store = createStore(pReducer, middleware);
+const persistor = persistStore(store);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

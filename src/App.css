@@ -1,38 +1,135 @@
-.App {
+.container {
+  justify-content: center;
+  text-align: center;
+  padding-top: 10%;
+}
+
+label {
+  padding: 10px;
+}
+
+select {
+  margin: 2em;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #040d13;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+a {
+  margin-left: 15px;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+}
+
+.nav li {
+  float: left;
+}
+.nav li:last-child {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(0, 0, 0);
+  color: lightcyan;
+}
+
+h4 {
+  text-align: center;
+  justify-content: center;
+}
+
+.menu {
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.question {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  margin: 1px;
+  padding: 1px;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.vertical {
+  width: 450px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.form {
+  margin: 50px;
+}
+
+.cardcontainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  min-width: 100% !important;
+}
+
+.ui.card,
+.ui.cards > .card {
+  width: 700px !important;
+}
+
+.ui.vertical.buttons {
+  margin-bottom: 10px;
+}
+
+.ui.progress {
+  align-items: center;
+  margin: 7em !important;
+}
+
+.answered {
+  margin-top: -5rem;
+}
+
+.asked {
+  margin-top: 5rem;
+}
+
+.leader {
+  margin-top: 100px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  text-align: center;
+  margin-top: 40px !important;
 }
